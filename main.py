@@ -9,3 +9,4 @@ bot = commands.Bot(command_prefix=commands.when_mentioned, intents=disnake.Inten
 @bot.event
 async def on_ready():
     print(f"{bot.user} заробил!")
+
