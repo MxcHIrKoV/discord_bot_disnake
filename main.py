@@ -8,26 +8,25 @@ bot = commands.Bot(command_prefix=commands.when_mentioned, intents=disnake.Inten
 
 @bot.event
 async def on_ready():
-    print(f"{bot.user} заробил!") \
- \
-@ bot.event
+    print(f"{bot.user} заробил!")
+
+@bot.event
 async def on_member_join(ctx):
     embed = disnake.Embed(
         title="Новый участник",
         description=f"{ctx.name}#{ctx.discriminator}",
         color=0x00FFCD
     )
+    await ctx.send(embed=embed)
 
 
 @bot.slash_command()
 async def server_info(inter):
     embed = disnake.Embed(
-        title="Новый участник",
-        description=f"123",
-        color=0x00FFCD
+        title="Информация о сервере",
+        description=f"Название сервера: {inter.guild.name}\nКоличесво участников: {inter.guild.member_count}",
+        color=0x7800FF
     )
-    await inter.response.send_message(
-        f"Название сервера: {inter.guild.name}\nКоличесво участников: {inter.guild.member_count}")
     await inter.send(embed=embed)
 
 
