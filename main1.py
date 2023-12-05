@@ -4,7 +4,7 @@ from disnake.ext import commands
 from conf import token
 
 bot = commands.Bot(command_prefix="!", intents=disnake.Intents.all(),
-                   activity=disnake.Game("PyCharm", status=disnake.Status.online))
+                   activity=disnake.Game("PyCharm", status=disnake.Status.offline))
 
 bot.remove_command("help")
 
